@@ -3,26 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DOM Learning</title>
 </head>
-<body>
-    <h1>Hello Meghana!</h1>
-    <button id="stop">Stop</button>
+<body style="background-color: #212121; color:white;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
 </body>
 <script>
-    const changeText = function(){
-        document.querySelector('h1').innerHTML = 'Hello Meghana, How are you?'
-    }
-    // setTimeout(function(){
-    //     console.log("Meghana")
-    // }, 2000)
-    const ref = setTimeout(changeText,3000)
-
-    // clearTimeout(ref)
-    document.querySelector('#stop').addEventListener('click',function(){
-        clearTimeout(ref);
-        console.log("stopped");
-        
-    })
+    const parent = document.querySelector('.parent')
+    //console.log(parent);
+    //console.log(parent.children);
+    //console.log(parent.children[1].innerHTML);
+    // for (let i = 0; i < parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML);
+    // }
+    // parent.children[2].style.color = 'pink'
+    parent.children[1].style.color = 'orange'
+    // console.log(parent.firstElementChild);  
+    // console.log(parent.lastElementChild);
+    const dayOne = document.querySelector('.day') //selects first element
+    // console.log(dayOne); // selects first element
+    // console.log(dayOne.parentElement);//gives whole div
+    // console.log(dayOne.nextElementSibling); 
+    console.log("NODES: ",parent.childNodes);
+    
 </script>
 </html>
