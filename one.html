@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Events</title>
+</head>
+<body style="background-color: olivedrab;">
+    <h2 style="color: black;">One India</h2>
+    <div>
+        <ul id="imagess">
+            <li><img width="100px" id="one"  src="images\1.png" alt="one india"></li> 
+            <li><img width="100px" id="two" src="images\2.png"></li>
+            <li><img width="100px" id="three" src="images/3.png"></li>
+            <li><a style="color: bisque;" href = "https://in.pinterest.com" id="pinterest">pinterest</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('two').onclick = function(){
+    //     alert("two clicked");
+    // }
+    // document.getElementById('imagess').addEventListener('click',function(e){
+    //     console.log("clicked inside ul");
+    // },false)
+
+
+    // document.getElementById('two').addEventListener('click',function(e){
+    //     console.log("clicked two");
+    //     e.stopPropagation();
+    // },false)
+
+    // document.getElementById('pinterest').addEventListener('click',function(e){
+    //     console.log("pinterest opened");
+    //     e.preventDefault();  
+    //     e.stopPropagation();
+    // },false)
+
+    document.querySelector('#imagess').addEventListener('click',function(e){
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+            let removeIt = e.target.parentNode;
+            removeIt.remove()
+        }        
+    })
+
+</script>
+
+</html>
